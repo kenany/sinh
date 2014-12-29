@@ -1,9 +1,7 @@
 var sinh = require('../');
 var test = require('tape');
-var defined = require('defined');
 
 function tolerance(precision) {
-  precision = defined(precision, 7);
   return 0.5 * Math.pow(10, -precision);
 }
 
