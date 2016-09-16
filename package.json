@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "almost-equal": "^1.1.0",
-    "lodash.isfunction": "^2.4.1",
+    "lodash.isfunction": "^3.0.8",
     "lodash.isnan": "^2.4.1",
     "tape": "^3.0.0"
   }
