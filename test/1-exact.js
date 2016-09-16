@@ -1,7 +1,8 @@
-var sinh = require('../');
-var test = require('tape');
-var isFunction = require('lodash.isfunction');
-var isNaN = require('lodash.isnan');
+'use strict';
+
+const sinh = require('../');
+const test = require('tape');
+const isNaN = require('lodash.isnan');
 
 test('NaN', function(t) {
   t.plan(1);

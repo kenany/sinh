@@ -10,13 +10,13 @@ const tolerance = 1e-14;
 test('sloppy algebraic expression', function(t) {
   t.plan(40);
 
-  for (var i = -20; i < 20; i++) {
+  for (let i = -20; i < 20; i++) {
     t.ok(almostEqual(sinh(i), (Math.exp(i) - Math.exp(-i)) / 2, tolerance));
   }
 });
 
 test('sloppy approximations', function(t) {
-  var FIXTURES = [
+  const FIXTURES = [
     [-6.902103625349695, -497.1816406250001],
     [-6.898143347143859, -495.21655273437517],
     [-6.883664481302669, -488.0980224609375],
@@ -303,9 +303,9 @@ test('sloppy approximations', function(t) {
   t.plan(FIXTURES.length);
 
   FIXTURES.forEach(function(fixture) {
-    var x = fixture[0];
-    var y = fixture[1];
-    var res = sinh(x);
+    const x = fixture[0];
+    const y = fixture[1];
+    const res = sinh(x);
     t.ok(almostEqual(res, y, tolerance), res + ' ~= ' + y);
   });
 });
