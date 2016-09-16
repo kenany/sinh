@@ -1,22 +1,17 @@
-var sinh = require('../');
-var test = require('tape');
+'use strict';
 
-function tolerance(precision) {
-  return 0.5 * Math.pow(10, -precision);
-}
+const sinh = require('../');
+const test = require('tape');
+const almostEqual = require('almost-equal');
 
-function almostEqual(a, b, precision) {
-  return Math.abs(a - b) < tolerance(precision);
-}
-
-// highest tolerance possible before a failure arises
-var sloppyTolerance = 7;
+// lowest tolerance possible before a failure arises
+const tolerance = 1e-14;
 
 test('sloppy algebraic expression', function(t) {
   t.plan(40);
 
   for (var i = -20; i < 20; i++) {
-    t.ok(almostEqual(sinh(i), (Math.exp(i) - Math.exp(-i)) / 2, sloppyTolerance));
+    t.ok(almostEqual(sinh(i), (Math.exp(i) - Math.exp(-i)) / 2, tolerance));
   }
 });
 
@@ -311,6 +306,6 @@ test('sloppy approximations', function(t) {
     var x = fixture[0];
     var y = fixture[1];
     var res = sinh(x);
-    t.ok(almostEqual(res, y, sloppyTolerance), res + ' ~= ' + y);
+    t.ok(almostEqual(res, y, tolerance), res + ' ~= ' + y);
   });
 });
