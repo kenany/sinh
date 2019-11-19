@@ -1,8 +1,9 @@
 'use strict';
 
-const sinh = require('../');
 const test = require('tape');
 const almostEqual = require('almost-equal');
+
+const sinh = require('../');
 
 // lowest tolerance possible before a failure arises
 const tolerance = 1e-14;

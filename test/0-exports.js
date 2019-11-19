@@ -1,8 +1,9 @@
 'use strict';
 
-const sinh = require('../');
 const test = require('tape');
 const isFunction = require('lodash.isfunction');
+
+const sinh = require('../');
 
 test('exports a function', function(t) {
   t.plan(1);

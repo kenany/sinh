@@ -1,8 +1,9 @@
 'use strict';
 
-const sinh = require('../');
 const test = require('tape');
 const isNaN = require('lodash.isnan');
+
+const sinh = require('../');
 
 test('NaN', function(t) {
   t.plan(1);
