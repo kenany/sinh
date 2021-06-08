@@ -17,6 +17,7 @@ test('sloppy algebraic expression', function(t) {
 });
 
 test('sloppy approximations', function(t) {
+  /* eslint-disable no-loss-of-precision */
   const FIXTURES = [
     [-6.902103625349695, -497.1816406250001],
     [-6.898143347143859, -495.21655273437517],
@@ -300,6 +301,7 @@ test('sloppy approximations', function(t) {
     [28.234874284944635, 914576637951.9989],
     [28.78280496108106, 1581915832319.9973]
   ];
+  /* eslint-enable no-loss-of-precision */
 
   t.plan(FIXTURES.length);
 
