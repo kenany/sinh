@@ -7,7 +7,10 @@
   ],
   "repository": "KenanY/sinh",
   "license": "MIT",
-  "author": "Kenan Yildirim <kenan@kenany.me> (http://kenany.me/)",
+  "author": "Kenan Yildirim <kenan@kenany.me> (https://kenany.me/)",
+  "engines": {
+    "node": "10 || 12 || 14 || >=16"
+  },
   "main": "index.js",
   "files": [
     "index.js",
@@ -19,15 +22,20 @@
   "scripts": {
     "lint": "eslint index.js test/*.js",
     "pretest": "npm run lint",
-    "test": "tape test/*.js"
+    "test": "tape test/*.js",
+    "release": "semantic-release"
   },
   "devDependencies": {
     "@kenan/eslint-config": "^9.0.4",
     "@kenan/renovate-config": "^1.5.1",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
     "almost-equal": "1.1.0",
+    "conventional-changelog-conventionalcommits": "^4.6.1",
     "eslint": "^7.32.0",
     "lodash.isfunction": "3.0.9",
     "lodash.isnan": "3.0.2",
+    "semantic-release": "^18.0.1",
     "tape": "5.3.1"
   }
 }
