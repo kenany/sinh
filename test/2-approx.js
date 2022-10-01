@@ -5,10 +5,10 @@ const almostEqual = require('almost-equal');
 
 const sinh = require('../');
 
-// lowest tolerance possible before a failure arises
+// Lowest tolerance possible before a failure arises.
 const tolerance = 1e-14;
 
-test('sloppy algebraic expression', function(t) {
+test('sloppy algebraic expression', (t) => {
   t.plan(40);
 
   for (let i = -20; i < 20; i++) {
@@ -16,7 +16,7 @@ test('sloppy algebraic expression', function(t) {
   }
 });
 
-test('sloppy approximations', function(t) {
+test('sloppy approximations', (t) => {
   /* eslint-disable no-loss-of-precision */
   const FIXTURES = [
     [-6.902103625349695, -497.1816406250001],
@@ -305,10 +305,10 @@ test('sloppy approximations', function(t) {
 
   t.plan(FIXTURES.length);
 
-  FIXTURES.forEach(function(fixture) {
+  for (const fixture of FIXTURES) {
     const x = fixture[0];
     const y = fixture[1];
     const res = sinh(x);
     t.ok(almostEqual(res, y, tolerance), res + ' ~= ' + y);
-  });
+  }
 });

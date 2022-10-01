@@ -5,27 +5,27 @@ const isNaN = require('lodash.isnan');
 
 const sinh = require('../');
 
-test('NaN', function(t) {
+test('NaN', (t) => {
   t.plan(1);
   t.ok(isNaN(sinh(NaN)));
 });
 
-test('+0', function(t) {
+test('+0', (t) => {
   t.plan(1);
   t.equal(sinh(+0), +0);
 });
 
-test('-0', function(t) {
+test('-0', (t) => {
   t.plan(1);
   t.equal(sinh(-0), -0);
 });
 
-test('INFINITY', function(t) {
+test('INFINITY', (t) => {
   t.plan(1);
   t.equal(sinh(Infinity), Infinity);
 });
 
-test('-INFINITY', function(t) {
+test('-INFINITY', (t) => {
   t.plan(1);
   t.equal(sinh(-Infinity), -Infinity);
 });
