@@ -34,7 +34,7 @@
     "eslint": "^8.42.0",
     "lodash.isfunction": "3.0.9",
     "lodash.isnan": "3.0.2",
-    "semantic-release": "^21.0.2",
+    "semantic-release": "^21.0.5",
     "tape": "5.6.3"
   }
 }
