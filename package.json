@@ -1,40 +1,61 @@
 {
   "name": "sinh",
-  "version": "4.0.0",
+  "version": "0.0.0-semantic-release",
   "description": "Calculate the hyperbolic sine of a number",
   "keywords": [
     "math"
   ],
-  "repository": "github:kenany/sinh",
   "license": "MIT",
   "author": "Kenan Yildirim <kenan@kenany.me> (https://kenany.me/)",
-  "engines": {
-    "node": "18 || >=20"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kenany/sinh.git"
   },
-  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "commonjs",
+  "types": "dist/index.d.cts",
+  "main": "dist/index.cjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./*.mjs": {
+      "default": "./dist/*.mjs"
+    },
+    "./*.cjs": {
+      "default": "./dist/*.cjs"
+    },
+    "./*": {
+      "import": "./dist/*.mjs",
+      "require": "./dist/*.cjs"
+    }
+  },
   "files": [
-    "index.js",
+    "dist",
     "LICENSE.txt"
   ],
-  "directories": {
-    "test": "test"
+  "engines": {
+    "node": "22 || 24 || >=26"
   },
   "scripts": {
-    "lint": "eslint index.js test/*.js",
-    "pretest": "npm run lint",
-    "test": "tape test/*.js",
-    "release": "semantic-release"
+    "build": "tsdown && tsc --noEmit",
+    "lint": "biome check",
+    "test": "vitest run",
+    "publint": "publint --strict",
+    "prepare": "pnpm build"
   },
   "devDependencies": {
-    "@kenan/eslint-config": "11.1.18",
-    "@semantic-release/changelog": "7.0.0",
-    "@semantic-release/git": "11.0.1",
-    "almost-equal": "1.1.0",
+    "@biomejs/biome": "2.5.4",
+    "@containerbase/semantic-release-pnpm": "1.4.2",
+    "@kenan/biome-config": "1.0.6",
     "conventional-changelog-conventionalcommits": "9.3.1",
-    "eslint": "8.57.1",
-    "lodash.isfunction": "3.0.9",
-    "lodash.isnan": "3.0.2",
+    "publint": "0.3.21",
     "semantic-release": "25.0.8",
-    "tape": "5.10.2"
+    "tsdown": "0.22.12",
+    "typescript": "7.0.2",
+    "vitest": "4.1.10"
   }
 }
