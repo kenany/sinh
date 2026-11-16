@@ -13,7 +13,7 @@ sinh(1);
 
 ## Installation
 
-``` bash
+```bash
 $ npm install sinh
 ```
 
